@@ -1,0 +1,34 @@
+
+server:
+  port: 8080
+spring:
+  config:
+    activate:
+      on-profile: dev
+    datasource:
+      url: jdbc:sqlserver://localhost:1433;databaseName=your_database;encrypt=true;trustServerCertificate=true
+      username: your_username
+      password: your_password
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    jpa:
+      database-platform: org.hibernate.dialect.SQLServerDialect
+    kafka:
+      bootstrap-server: localhost:29092
+    redis:
+     host: localhost
+     port: 6379
+
+
+openapi:
+  service:
+    api-docs: api-service
+    server: http://localhost:${server.port}
+    title: API Service
+    version: 1.0.0
+
+jwt:
+  timeout: 1000*60*60*24
+  expiryDate: 14
+  refreshKey: 005A8FBFB51B6486061624FA0A84F7B8E10E705D745ECC76A8E93675379A7487
+  secretKey: E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855 #phai de dang decode
+
