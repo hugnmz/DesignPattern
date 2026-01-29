@@ -34,7 +34,6 @@ public class AuthenticationController {
     @PostMapping("/access")
     public ResponseEntity<TokenResponse> login(@RequestBody SignInRequest request){
         return new ResponseEntity<>(authenticationService.authenticate(request), OK);
-
     }
 
     @PostMapping("/refresh")
