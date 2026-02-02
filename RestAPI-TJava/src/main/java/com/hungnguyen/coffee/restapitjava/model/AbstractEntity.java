@@ -14,7 +14,7 @@ import java.util.Date;
 @Getter
 @Setter
 @MappedSuperclass // để chia sẻ field vs các entity kế thừa khác, ko dc tạo  table trong db, ko dc query trực tiếp
-public class AbstractEntity<T extends Serializable> implements Serializable {
+    public class AbstractEntity<T extends Serializable> implements Serializable {
 
 
     @Id
