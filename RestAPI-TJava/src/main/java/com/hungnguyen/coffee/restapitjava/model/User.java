@@ -70,7 +70,7 @@ public class User extends AbstractEntity<Long> implements UserDetails, Serializa
 
     @Column(name = "activated")
     private Boolean activated;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.    EAGER, mappedBy = "user") // qh 1 - N bs address
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.    EAGER, mappedBy = "user")
     private Set<Address> addresses = new HashSet<>();
     public void saveAddress(Address address) {
 

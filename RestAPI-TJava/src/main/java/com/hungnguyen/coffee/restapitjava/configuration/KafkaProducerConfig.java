@@ -20,6 +20,9 @@ public class KafkaProducerConfig {
     @Value("${spring.spring.kafka.bootstrap-server:-localhost:29092}")
     private String bootstrapServers;
 
+    private String utf;
+    private String string;
+
 
     // truyền đi 1 đối tượng r convert thành json hay là 1 message dc format
     @Bean
