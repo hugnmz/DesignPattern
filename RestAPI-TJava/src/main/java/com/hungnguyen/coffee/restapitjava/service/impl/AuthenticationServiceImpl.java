@@ -95,14 +95,14 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         //check it into db
         UserDetails user = userRepository.findByUsername(userName);
 
-        if(!jwtService.isValid(token, user)){
+        if(!jwtService.isValid(token, user)){ // loi
             throw new AuthenticationServiceException("Invalid token");
         }
         String accessToken = jwtService.generateToken(user); // tao accesstoken key mới
 
 
         redisTokenService.save(RedisToken.builder()
-                .id(user.getUSername())
+                .id(user.getUSername()) // loi
                 .accessToken(accessToken)
                 .refreshToken(accessToken)
                 .build())
